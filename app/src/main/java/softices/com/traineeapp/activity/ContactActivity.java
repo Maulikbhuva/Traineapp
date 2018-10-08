@@ -16,39 +16,25 @@ import softices.com.traineeapp.R;
 import softices.com.traineeapp.adapter.CustomAdapter;
 
 public class ContactActivity extends AppCompatActivity {
-    public static View.OnClickListener myOnClickListener;
-    private static RecyclerView.Adapter adapter;
-    private RecyclerView.LayoutManager layoutManager;
+    private static CustomAdapter adapter;
     private static RecyclerView recyclerView;
     private static ArrayList<DataModel> data;
     private static ArrayList<Integer> removedItems;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        myOnClickListener = new MyOnClickListener(this);
-
         recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
         recyclerView.setHasFixedSize(true);
 
-        layoutManager = new LinearLayoutManager(this);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
-        data = new ArrayList<DataModel>();
-        for (int i = 0; i < MyData.nameArray.length; i++) {
-            data.add(new DataModel(
-                    MyData.nameArray[i],
-                    MyData.versionArray[i],
-                    MyData.id_[i],
-                    MyData.drawableArray[i]
-            ));
-        }
-
         removedItems = new ArrayList<Integer>();
-
         adapter = new CustomAdapter(data);
         recyclerView.setAdapter(adapter);
     }

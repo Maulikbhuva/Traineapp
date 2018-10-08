@@ -40,8 +40,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
                                            int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_layout, parent, false);
 
-        view.setOnClickListener(ContactActivity.myOnClickListener);
-
         MyViewHolder myViewHolder = new MyViewHolder(view);
         return myViewHolder;
     }

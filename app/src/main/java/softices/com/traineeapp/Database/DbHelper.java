@@ -11,7 +11,7 @@ import static com.android.volley.VolleyLog.TAG;
 
 public class DbHelper extends SQLiteOpenHelper {
 
-    static String DATABASE_NAME = "TraineeApp";
+    public static final String DATABASE_NAME = "Traineeapp";
 
     public static final String TABLE_USER = "User";
 

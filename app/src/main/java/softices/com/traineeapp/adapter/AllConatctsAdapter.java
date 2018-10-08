@@ -5,18 +5,18 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
 
 import softices.com.traineeapp.R;
 
-public class AllconatctAdapter extends RecyclerView.Adapter<AllconatctAdapter.ContactViewHolder> {
+public class AllConatctsAdapter extends RecyclerView.Adapter<AllConatctsAdapter.ContactViewHolder>{
 
     private List<ContactVO> contactVOList;
     private Context mContext;
-
-    public AllconatctAdapter(List<ContactVO> contactVOList, Context mContext) {
+    public AllConatctsAdapter(List<ContactVO> contactVOList, Context mContext){
         this.contactVOList = contactVOList;
         this.mContext = mContext;
     }
@@ -31,7 +31,7 @@ public class AllconatctAdapter extends RecyclerView.Adapter<AllconatctAdapter.Co
     @Override
     public void onBindViewHolder(ContactViewHolder holder, int position) {
         ContactVO contactVO = contactVOList.get(position);
-        holder.tvContactEmail.setText(contactVO.getContactName());
+        holder.tvContactName.setText(contactVO.getContactName());
         holder.tvPhoneNumber.setText(contactVO.getContactNumber());
     }
 
@@ -40,14 +40,17 @@ public class AllconatctAdapter extends RecyclerView.Adapter<AllconatctAdapter.Co
         return contactVOList.size();
     }
 
-    public static class ContactViewHolder extends RecyclerView.ViewHolder {
-        TextView tvContactEmail;
+    public static class ContactViewHolder extends RecyclerView.ViewHolder{
+
+        ImageView ivContactImage;
+        TextView tvContactName;
         TextView tvPhoneNumber;
 
         public ContactViewHolder(View itemView) {
             super(itemView);
-            tvContactEmail = (TextView) itemView.findViewById(R.id.txt_contactemail);
-            tvPhoneNumber = itemView.findViewById(R.id.txt_contactnumber);
+            ivContactImage = (ImageView) itemView.findViewById(R.id.ivContactImage);
+            tvContactName = (TextView) itemView.findViewById(R.id.tvContactName);
+            tvPhoneNumber = (TextView) itemView.findViewById(R.id.tvPhoneNumber);
         }
     }
 }
