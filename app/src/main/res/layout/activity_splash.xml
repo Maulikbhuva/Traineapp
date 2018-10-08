@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/picture"
+    >
+
+    <TextView
+        android:id="@+id/txt_traineeapp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:textColor="@color/color"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:text="TraineeApp"
+        android:textSize="50dp" />
+
+</RelativeLayout>

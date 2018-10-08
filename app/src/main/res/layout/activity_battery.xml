@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/txt_battery"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Battery"
+        android:gravity="center"/>
+
+    <ProgressBar
+        android:id="@+id/pb_progressbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dip"
+        android:max="100"
+        android:minHeight="100dip"
+        android:minWidth="200dip"
+        style="?android:attr/progressBarStyleHorizontal"/>
+        />
+
+</RelativeLayout>

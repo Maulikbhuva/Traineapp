@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/viewImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/txt_Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/edt_Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/txt_Email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/edt_Email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/txt_gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="gender"
+            android:textSize="20dp" />
+
+        <RadioGroup
+            android:id="@+id/rdg_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_gender"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rdb_male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="male" />
+
+            <RadioButton
+                android:id="@+id/rdb_female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="female" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/txt_mobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="mobile number"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/edt_mobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_mobile"
+            android:digits="0123456789"
+            android:inputType="number"
+            android:maxLength="10"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/txt_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="password"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/edt_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/txt_cnfmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="confirm password"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/edt_cnfmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btn_Signup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="20dp"
+            android:text="Signup"
+            android:textAllCaps="false"
+            android:textSize="30dp" />
+
+    </LinearLayout>
+</ScrollView>

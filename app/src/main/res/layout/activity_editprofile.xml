@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        >
+
+        <ImageView
+            android:id="@+id/img_Eimage"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/txt_Ename"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textSize="25dp" />
+
+        <EditText
+            android:id="@+id/edt_Ename"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textSize="20dp" />
+
+
+        <TextView
+            android:id="@+id/txt_Eemail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:textSize="25dp" />
+
+        <EditText
+            android:id="@+id/edt_Eemail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:editable="false"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/txt_Egender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="gender"
+            android:textSize="20dp" />
+
+        <RadioGroup
+            android:id="@+id/rdg_Egroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:checkedButton="@id/rdb_Emale"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rdb_Emale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="male" />
+
+            <RadioButton
+                android:id="@+id/rdb_Efemle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="female" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/txt_Emobile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mobile Number"
+            android:textSize="25dp" />
+
+        <EditText
+            android:id="@+id/edt_Emobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="0123456789"
+            android:inputType="number"
+            android:maxLength="10"
+            android:singleLine="true"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/txt_Epassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Password"
+            android:textSize="25dp" />
+
+        <EditText
+            android:id="@+id/edt_Epassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:inputType="textPassword"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/txt_Econfirmpassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Confirm Password"
+            android:textSize="25dp" />
+
+        <EditText
+            android:id="@+id/edt_Econfirmpassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:inputType="textPassword"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btn_Save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="20dp"
+            android:text="Save"
+            android:textAllCaps="false"
+            android:textSize="30dp" />
+
+    </LinearLayout>
+</ScrollView>

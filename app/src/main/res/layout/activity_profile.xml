@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/img_viewImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/txt_Nm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:layout_below="@+id/img_viewImage"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/edt_Nm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_Nm"
+        android:singleLine="true"
+        android:text="Name"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/txt_gndr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edt_Nm"
+        android:text="gender"
+        android:textSize="20dp" />
+
+    <RadioGroup
+        android:id="@+id/rdg_grp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_gndr"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:saveEnabled="false"
+        android:checkedButton="@id/rdb_FML"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:editable="false"
+            android:enabled="false"
+            android:id="@+id/rdb_ML"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="male" />
+
+        <RadioButton
+            android:enabled="false"
+            android:editable="false"
+            android:id="@+id/rdb_FML"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="female" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/txt_mbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rdg_grp"
+        android:text="Mobile Number"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/edt_mbl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_mbl"
+        android:text="mobilenumber"
+        android:singleLine="true"
+        android:textSize="25dp" />
+
+    <Button
+        android:id="@+id/btn_Edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edt_mbl"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
+        android:text="Edit"
+        android:textAllCaps="false"
+        android:textSize="30dp" />
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_Edit"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
+        android:text="Logout"
+        android:textAllCaps="false"
+        android:textSize="30dp"
+        />
+
+</RelativeLayout>
