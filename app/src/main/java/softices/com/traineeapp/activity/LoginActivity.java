@@ -28,6 +28,7 @@ public class LoginActivity extends Activity {
     private Button btnLogin;
     private EditText edtPassword;
     private EditText edtEmail;
+    private TextView resetpassword;
     private SharedPreferences sharedPreferences;
 
     @Override
@@ -43,6 +44,7 @@ public class LoginActivity extends Activity {
         edtPassword = findViewById(R.id.edt_Password);
         edtEmail = findViewById(R.id.edt_email);
         btnLogin = findViewById(R.id.btn_login);
+        TextView resetpassword = findViewById(R.id.txt_forgotpassword);
         edtEmail.setText("maulik@gmail.com");
         edtPassword.setText("maulik123");
 
@@ -67,14 +69,19 @@ public class LoginActivity extends Activity {
         });
 
         txtCreate.setOnClickListener(new OnClickListener() {
-
             @Override
             public void onClick(View v) {
 // TODO Auto-generated method stub
-
-                Intent androidsolved_intent = new Intent(getApplicationContext(), SignupActivity.class);
-                startActivity(androidsolved_intent);
-                /**/
+                Intent i = new Intent(getApplicationContext(), SignupActivity.class);
+                startActivity(i);
+            }
+        });
+        resetpassword.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+// TODO Auto-generated method stub
+                Intent i = new Intent(getApplicationContext(), ForgotPasswordActivity.class);
+                startActivity(i);
             }
         });
     }

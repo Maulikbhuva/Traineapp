@@ -20,8 +20,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/txt_email"
-            android:lines="1"
             android:digits="abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ@._,"
+            android:lines="1"
             android:textSize="25dp" />
 
         <TextView
@@ -37,34 +37,45 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/txt_Password"
-            android:lines="1"
-            android:inputType="textPassword"
-            android:maxLength="12"
             android:digits="abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ@._,"
+            android:inputType="textPassword"
+            android:lines="1"
+            android:maxLength="12"
             android:textSize="25dp" />
 
         <Button
             android:id="@+id/btn_login"
-            android:layout_width= "match_parent"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/edt_Password"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
             android:layout_marginTop="20dp"
+            android:layout_marginRight="30dp"
             android:text="Login"
             android:textAllCaps="false"
             android:textSize="25dp" />
+
         <TextView
             android:id="@+id/txt_creat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/btn_login"
-            android:text="Creat New Account?"
-            android:textSize="15dp"
             android:paddingLeft="100dp"
             android:paddingTop="20dp"
             android:paddingRight="100dp"
-            />
+            android:text="Creat New Account?"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/txt_forgotpassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_creat"
+            android:paddingLeft="100dp"
+            android:paddingTop="20dp"
+            android:paddingRight="100dp"
+            android:text="Forgot Password?"
+            android:textSize="15dp" />
     </RelativeLayout>
 </ScrollView>

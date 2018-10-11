@@ -5,7 +5,10 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.graphics.Bitmap;
 import android.util.Log;
+
+import softices.com.traineeapp.Model.UserModel;
 
 import static com.android.volley.VolleyLog.TAG;
 
@@ -71,8 +74,8 @@ public class DbHelper extends SQLiteOpenHelper {
             return true;
         } catch (Exception e) {
             Log.e("insertRecord", e + "");
-            return false;
         }
+        return false;
     }
 
     public boolean updateRecord(byte[] image, String name, String Email, String gender, String mobilenumber, String password) {
@@ -129,68 +132,87 @@ public class DbHelper extends SQLiteOpenHelper {
      * \
      * Used to get all data in model using current login user mail.
      *
-     * @param value
+     * @param
      * @return
      */
-    public UserModel getUserDataByEmail(String value) {
-        UserModel data = new UserModel();
-        try {
-            String query = "SELECT * FROM " + DbHelper.TABLE_USER + " WHERE "
-                    + DbHelper.USER_EMAIL + "='" + value + "';";
-            Cursor cursor = dataBase.rawQuery(query, null);
-
-            if (cursor.getCount() > 0) {
-                cursor.moveToNext();
-                data.setFirstName(cursor.getString(cursor.getColumnIndex(DbHelper
-                        .USER_NAME)));
-                data.setEmail(cursor.getString(cursor.getColumnIndex(DbHelper
-                        .USER_EMAIL)));
-                data.setMobile(cursor.getString(cursor.getColumnIndex(DbHelper
-                        .USER_MOBILENUMBER)));
-                data.setPassword(cursor.getString(cursor.getColumnIndex(DbHelper
-                        .USER_PASSWORD)));
-                data.setPhoto(Utility.getPhoto(cursor.getBlob(cursor.getColumnIndex(DbHelper
-                        .USER_IMAGE))));
-                return data;
-            }
-        } catch (Exception e) {
-            Log.e(TAG, "getUserDataByEmail " + e);
-        }
-        return data;
-    }
-
-
-    private class UserModel {
-        private String firstName;
-        private String email;
-        private String mobile;
-        private String password;
-        private Object photo;
-
-        public void setFirstName(String firstName) {
-            this.firstName = firstName;
-        }
-
-        public void setEmail(String email) {
-            this.email = email;
-        }
-
-        public void setMobile(String mobile) {
-            this.mobile = mobile;
-        }
-
-        public void setPassword(String password) {
-            this.password = password;
-        }
-
-        public void setPhoto(Object photo) {
-            this.photo = photo;
-        }
-    }
+//    public UserModel getUserDataByEmail(String value) {
+//        UserModel data = new UserModel();
+//        try {
+//            String query = "SELECT * FROM " + DbHelper.TABLE_USER + " WHERE "
+//                    + DbHelper.USER_EMAIL + "='" + value + "';";
+//            Cursor cursor = dataBase.rawQuery(query, null);
+//
+//            if (cursor.getCount() > 0) {
+//                cursor.moveToNext();
+//                data.setName(cursor.getString(cursor.getColumnIndex(DbHelper
+//                        .USER_NAME)));
+//                data.setEmail(cursor.getString(cursor.getColumnIndex(DbHelper
+//                        .USER_EMAIL)));
+//                data.setMobilenumber(cursor.getString(cursor.getColumnIndex(DbHelper
+//                        .USER_MOBILENUMBER)));
+//                data.setPassword(cursor.getString(cursor.getColumnIndex(DbHelper
+//                        .USER_PASSWORD)));
+//                data.setPhoto((Bitmap) Utility.getPhoto(cursor.getBlob(cursor.getColumnIndex(DbHelper
+//                        .USER_IMAGE))));
+//                return data;
+//            }
+//        } catch (Exception e) {
+//            Log.e(TAG, "getUserDataByEmail " + e);
+//        }
+//        return data;
+//    }
+public  Cursor getUserData (String email){
+     String[] colums = {
+             DbHelper.USER_IMAGE,
+             DbHelper.USER_NAME,
+             DbHelper.USER_EMAIL,
+             DbHelper.USER_GENDER,
+             DbHelper.USER_MOBILENUMBER,
+             DbHelper.USER_PASSWORD
+     };
+     SQLiteDatabase db =this.getReadableDatabase();
+     String selection =USER_EMAIL + " = ? ";
+     String[] selectionArgs = {email};
+     Cursor curser = db.query(TABLE_USER,
+             colums,
+             selection,
+             selectionArgs,
+             null,
+             null,
+             null);
+return  curser;
+}
 
     private static class Utility {
         public static Object getPhoto(byte[] blob) {
             return null;
         }
+
+    }
+    public boolean isEmailExist(String mail) {
+        try {
+            String[] columns = {
+                    DbHelper.USER_EMAIL
+            };
+            // selection criteria
+            String selection = DbHelper.USER_EMAIL + " = ?";
+
+            String[] selectionArgs = {mail};
+
+            Cursor cursor = dbHelper.query(DbHelper.TABLE_USER, columns, selection,
+                    selectionArgs, null, null, null);
+            int Count = cursor.getCount();
+            if (Count > 0) {
+                return true;
+            }
+
+        } catch (Exception e) {
+            Log.e(TAG, "isEmailExist " + e);
+        }
+        return false;
+    }
+
+    private Cursor query(String tableUser, String[] columns, String selection, String[] selectionArgs, Object o, Object o1, Object o2) {
+        return null;
     }
 }

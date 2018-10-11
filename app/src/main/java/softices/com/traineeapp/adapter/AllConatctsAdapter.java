@@ -48,9 +48,9 @@ public class AllConatctsAdapter extends RecyclerView.Adapter<AllConatctsAdapter.
 
         public ContactViewHolder(View itemView) {
             super(itemView);
-            ivContactImage = (ImageView) itemView.findViewById(R.id.ivContactImage);
-            tvContactName = (TextView) itemView.findViewById(R.id.tvContactName);
-            tvPhoneNumber = (TextView) itemView.findViewById(R.id.tvPhoneNumber);
+            this.ivContactImage = (ImageView) itemView.findViewById(R.id.ivContactImage);
+            this.tvContactName = (TextView) itemView.findViewById(R.id.tvContactName);
+            this.tvPhoneNumber = (TextView) itemView.findViewById(R.id.tvPhoneNumber);
         }
     }
 }
